@@ -98,7 +98,7 @@ header {
     right: 0;
     z-index: 999;
 
-    background-color: hsl(0, 0%, 100%, 0.2);
+    background-color: var(--color-dark);
 
     width: 70%;
     height: 100vh;
@@ -199,6 +199,7 @@ main {
     line-height: 2.3rem;
     letter-spacing: 1.25px;
     color: var(--color-dark);
+    background-color: var(--color-white);
     text-transform: uppercase;
 
     border: none;
