@@ -1172,6 +1172,7 @@ main {
     }
 }
 
+/* Bigger desktop screen breakpoint */
 @media screen and (min-width: 1280px) {
     #technology-main {
         padding-left: 10rem;

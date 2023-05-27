@@ -8,33 +8,12 @@ $(document).ready(function() {
 
     var crewNavCircle = $('.crew-nav-circle'); // Crew page navigation circle
 
-    var technologyNavNumber = $('.technology-nav-number');
+    var technologyNavNumber = $('.technology-nav-number'); // Technology page navigation numbers
 
+    // If screen width is greater than or equal to 1024px
     if (viewportWidth >= 1024) {
+        // Load desktop pictures
         loadTechnologyDesktop(0);
-    }
-
-    function loadTechnologyDesktop(index) {
-        // Load JSON data
-        $.getJSON('js/data.json', function(data) {
-            // Load clicked planet's data
-            var data = data.technology[index];
-
-            // Replace planet image
-            $('.technology-image').fadeOut(150, function() {
-                $('.technology-image').attr('src', data.images.portrait).fadeIn(150);
-            });
-
-            // Replace planet's name
-            $('.technology-name').fadeOut(150, function() {
-                $('.technology-name').text(data.name).fadeIn(150);
-            });
-
-            // Replace planet's description
-            $('.technology-description').fadeOut(150, function() {
-                $('.technology-description').text(data.description).fadeIn(150);
-            });
-        });
     }
 
     // Add event listener to technology navigation number on click
@@ -155,23 +134,47 @@ $(document).ready(function() {
     function loadTechnology(index) {
         // Load JSON data
         $.getJSON('js/data.json', function(data) {
-            // Load clicked planet's data
+            // Load clicked technology
             var data = data.technology[index];
 
-            // Replace planet image
+            // Replace technology image
             $('.technology-image').fadeOut(150, function() {
                 $('.technology-image').attr('src', data.images.landscape).fadeIn(150);
             });
 
-            // Replace planet's name
+            // Replace technology name
             $('.technology-name').fadeOut(150, function() {
                 $('.technology-name').text(data.name).fadeIn(150);
             });
 
-            // Replace planet's description
+            // Replace technology description
             $('.technology-description').fadeOut(150, function() {
                 $('.technology-description').text(data.description).fadeIn(150);
             });
         });   
+    }
+
+    // Loads information and portrait image of technology from data.json
+    function loadTechnologyDesktop(index) {
+        // Load JSON data
+        $.getJSON('js/data.json', function(data) {
+            // Load clicked technology
+            var data = data.technology[index];
+
+            // Replace technology image
+            $('.technology-image').fadeOut(150, function() {
+                $('.technology-image').attr('src', data.images.portrait).fadeIn(150);
+            });
+
+            // Replace technology name
+            $('.technology-name').fadeOut(150, function() {
+                $('.technology-name').text(data.name).fadeIn(150);
+            });
+
+            // Replace technology description
+            $('.technology-description').fadeOut(150, function() {
+                $('.technology-description').text(data.description).fadeIn(150);
+            });
+        });
     }
 });

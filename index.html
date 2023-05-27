@@ -27,45 +27,59 @@
         <title>Space Tourism</title>
     </head>
     <body>
+        <!-- Header -->
         <header>
+            <!-- Space Tourism logo in header -->
             <img src="assets/shared/logo.svg" 
             alt="space tourism logo"
             id="header-logo">
 
+            <!-- Hamburger menu icon -->
             <img src="assets/shared/icon-hamburger.svg" 
             id="hamburger-menu-button"
             alt="hamburger menu icon" />
 
+            <!-- Navigation bar -->
             <nav id="nav-bar">
+                <!-- Navigation menu -->
                 <ul id="nav-menu">
+                    <!-- Navigation item -->
                     <li class="nav-item">
+                        <!-- Homepage link (links to index.html / active default) -->
                         <a href="index.html" id="index-link" class="nav-link active">
                             <span class="list-number">00</span>
                             HOME
                         </a>
                     </li>
 
+                    <!-- Navigation item -->
                     <li class="nav-item">
+                        <!-- Destination link (links to destination.html) -->
                         <a href="destination.html" id="destination-link" class="nav-link">
                             <span class="list-number">01</span>
                             DESTINATION
                         </a>
                     </li>
 
+                    <!-- Navigation item -->
                     <li class="nav-item">
+                        <!-- Crew link (links to crew.html) -->
                         <a href="crew.html" id="crew-link" class="nav-link">
                             <span class="list-number">02</span>
                             CREW
                         </a>
                     </li>
 
+                    <!-- Navigation item -->
                     <li class="nav-item">
+                        <!-- Technology link (links to technology.html) -->
                         <a href="technology.html" id="technology-link" class="nav-link">
                             <span class="list-number">03</span>
                             TECHNOLOGY
                         </a>
                     </li>
 
+                    <!-- Close menu button -->
                     <li id="close-menu-button-container">
                         <img src="assets/shared/icon-close.svg" 
                         id="close-menu-button"
@@ -75,7 +89,9 @@
             </nav>
         </header>
 
+        <!-- Homepage Main -->
         <main>
+            <!-- Text container for homepage -->
             <div id="homepage-text-container">
                 <h1>
                     so, you want to travel to
@@ -90,6 +106,7 @@
                 </p>
             </div>
             
+            <!-- EXPLORE button / Opens destination.html -->
             <button onclick="window.location.href = 'destination.html'" id="large-button" type="submit">explore</button>
         </main>
     </body>

@@ -26,46 +26,61 @@
         <!-- Title -->
         <title>Space Tourism</title>
     </head>
+    <!-- Destination page body -->
     <body id="destination-body">
+        <!-- Header -->
         <header>
+            <!-- Space Tourism logo in header -->
             <img src="assets/shared/logo.svg" 
             alt="space tourism logo"
             id="header-logo">
 
+            <!-- Hamburger menu icon -->
             <img src="assets/shared/icon-hamburger.svg" 
             id="hamburger-menu-button"
             alt="hamburger menu icon" />
 
+            <!-- Navigation bar -->
             <nav id="nav-bar">
+                <!-- Navigation menu -->
                 <ul id="nav-menu">
+                    <!-- Navigation item -->
                     <li class="nav-item">
+                        <!-- Homepage link (links to index.html) -->
                         <a href="index.html" id="index-link" class="nav-link">
                             <span class="list-number">00</span>
                             HOME
                         </a>
                     </li>
 
+                    <!-- Navigation item -->
                     <li class="nav-item">
+                        <!-- Destination link (links to destination.html / active on destination page) -->
                         <a href="destination.html" id="destination-link" class="nav-link active">
                             <span class="list-number">01</span>
                             DESTINATION
                         </a>
                     </li>
 
+                    <!-- Navigation item -->
                     <li class="nav-item">
+                        <!-- Crew link (links to crew.html) -->
                         <a href="crew.html" id="crew-link" class="nav-link">
                             <span class="list-number">02</span>
                             CREW
                         </a>
                     </li>
 
+                    <!-- Navigation item -->
                     <li class="nav-item">
+                        <!-- Technology link (links to technology.html) -->
                         <a href="technology.html" id="technology-link" class="nav-link">
                             <span class="list-number">03</span>
                             TECHNOLOGY
                         </a>
                     </li>
 
+                    <!-- Close menu button -->
                     <li id="close-menu-button-container">
                         <img src="assets/shared/icon-close.svg" 
                         id="close-menu-button"
@@ -75,39 +90,48 @@
             </nav>
         </header>
 
+        <!-- Destination page main -->
         <main id="destination-main">
+            <!-- Planet image container -->
             <div id="planet-image-container">
+                <!-- Pick your destination header -->
                 <h1 id="pick-your-destination">
                     <span class="list-number">01</span>
                     pick your destination
                 </h1>
+
+                <!-- Planet image (default moon) -->
                 <img src="assets/destination/image-moon.webp" class="planet-image"
                 alt="image of moon">
             </div>
 
+            <!-- Planet information container -->
             <div id="planet-information-container">
+                <!-- Navigation between different destinations (planets) -->
                 <ul id="planet-list-menu">
-                    <li id="list-moon" class="planet-list-item planet-active">
+                    <li class="planet-list-item planet-active">
                         MOON
                     </li>
 
-                    <li id="list-mars" class="planet-list-item">
+                    <li class="planet-list-item">
                         MARS
                     </li>
 
-                    <li id="list-europa" class="planet-list-item">
+                    <li class="planet-list-item">
                         EUROPA
                     </li>
 
-                    <li id="list-titan" class="planet-list-item">
+                    <li class="planet-list-item">
                         TITAN
                     </li>
                 </ul>
 
+                <!-- Name of the planet (changes according to chosen planet) -->
                 <h1 class="planet-name">
                     MOON
                 </h1>
 
+                <!-- Description of planet (changes according to chosen planet) -->
                 <p class="planet-description">
                     See our planet as you’ve never seen it before. 
                     A perfect relaxing trip away to help regain 
@@ -116,14 +140,18 @@
                     and Apollo 11 landing sites.
                 </p>
 
+                <!-- Divider line -->
                 <div class="divider"></div>
 
+                <!-- Flex container for distance and travel time -->
                 <div class="flex-container">
+                    <!-- Changes according to chosen planet -->
                     <div id="distance-container">
                         <h1>AVG. DISTANCE</h1>
                         <h1 class="distance">384,400 KM</h1>
                     </div>
     
+                    <!-- Changes according to chosen planet -->
                     <div id="travel-time-container">
                         <h1>EST. TRAVEL TIME</h1>
                         <h1 class="travel-time">3 DAYS</h1>
