@@ -26,7 +26,7 @@
         <!-- Title -->
         <title>Space Tourism</title>
     </head>
-    <body id="destination-body">
+    <body id="crew-body">
         <header>
             <img src="assets/shared/logo.svg" 
             alt="space tourism logo"
@@ -46,14 +46,14 @@
                     </li>
 
                     <li class="nav-item">
-                        <a href="destination.html" id="destination-link" class="nav-link active">
+                        <a href="destination.html" id="destination-link" class="nav-link">
                             <span class="list-number">01</span>
                             DESTINATION
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="crew.html" id="crew-link" class="nav-link">
+                        <a href="#" id="crew-link" class="nav-link active">
                             <span class="list-number">02</span>
                             CREW
                         </a>
@@ -75,59 +75,35 @@
             </nav>
         </header>
 
-        <main id="destination-main">
-            <div id="planet-image-container">
-                <h1 id="pick-your-destination">
-                    <span class="list-number">01</span>
-                    pick your destination
-                </h1>
-                <img src="assets/destination/image-moon.webp" class="planet-image"
-                alt="image of moon">
+        <main id="crew-main">
+            <h1 id="meet-your-crew">
+                <span class="list-number">02</span>
+                meet your crew
+            </h1>
+
+            <div id="crew-image-container">
+                <img src="assets/crew/image-douglas-hurley.webp"
+                alt="photo of Douglas Hurley"
+                class="crew-image">
             </div>
 
-            <div id="planet-information-container">
-                <ul id="planet-list-menu">
-                    <li id="list-moon" class="planet-list-item planet-active">
-                        MOON
-                    </li>
+            <div id="crew-info-container">
+                <div id="text-container">
+                    <h2 class="crew-position">commander</h2>
+                    <h1 class="crew-name">douglas hurley</h1>
+                    <p class="crew-bio">
+                        Douglas Gerald Hurley is an American engineer, former 
+                        Marine Corps pilot and former NASA astronaut. 
+                        He launched into space for the third time as commander 
+                        of Crew Dragon Demo-2.
+                    </p>
+                </div>
 
-                    <li id="list-mars" class="planet-list-item">
-                        MARS
-                    </li>
-
-                    <li id="list-europa" class="planet-list-item">
-                        EUROPA
-                    </li>
-
-                    <li id="list-titan" class="planet-list-item">
-                        TITAN
-                    </li>
-                </ul>
-
-                <h1 class="planet-name">
-                    MOON
-                </h1>
-
-                <p class="planet-description">
-                    See our planet as you’ve never seen it before. 
-                    A perfect relaxing trip away to help regain 
-                    perspective and come back refreshed. While you’re 
-                    there, take in some history by visiting the Luna 2 
-                    and Apollo 11 landing sites.
-                </p>
-
-                <div class="divider"></div>
-
-                <div class="flex-container">
-                    <div id="distance-container">
-                        <h1>AVG. DISTANCE</h1>
-                        <h1 class="distance">384,400 KM</h1>
-                    </div>
-    
-                    <div id="travel-time-container">
-                        <h1>EST. TRAVEL TIME</h1>
-                        <h1 class="travel-time">3 DAYS</h1>
-                    </div>
+                <div id="circle-container">
+                    <span id="firstCircle" class="crew-nav-circle circle-active"></span>
+                    <span id="secondCircle" class="crew-nav-circle"></span>
+                    <span id="thirdCircle" class="crew-nav-circle"></span>
+                    <span id="fourthCircle" class="crew-nav-circle"></span>
                 </div>
             </div>
         </main>

@@ -632,6 +632,15 @@ main {
         justify-content: flex-start;
     }
 
+    .planet-list-item {
+        cursor: pointer;
+    }
+
+    .planet-list-item:hover,
+    .planet-list-item:focus {
+        border-bottom: 3px solid hsl(0, 0%, 100%, 0.5);
+    }
+
     .planet-name {
         font-size: 10rem;
         line-height: 11.5rem;
@@ -659,4 +668,264 @@ main {
         text-align: left;
     }
 
+}
+
+/* -------------------- */
+/*      Crew Page       */
+/* -------------------- */
+
+#crew-body {
+    background-image: url(assets/crew/background-crew-mobile.jpg);
+}
+
+#crew-main {
+    margin-top: 2.4rem;
+}
+
+#meet-your-crew {
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 1.9rem;
+    letter-spacing: 2.7px;
+    text-transform: uppercase;
+}
+
+#meet-your-crew span {
+    opacity: 0.25;
+}
+
+#crew-image-container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    min-height: 26.4rem;
+    width: 100%;
+    margin-top: 3.2rem;
+    border-bottom: 3px solid #383B4B;
+}
+
+.crew-image {
+    width: 17.7rem;
+}
+
+#circle-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.6rem;
+
+    margin-top: 3.2rem;
+}
+
+.crew-nav-circle {
+    width: 1rem;
+    aspect-ratio: 1;
+    display: inline-block;
+    border-radius: 50%;
+    background-color: white;
+    opacity: 0.15;
+}
+
+.circle-active {
+    opacity: 1;
+}
+
+#crew-info-container {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+#text-container {
+    margin-top: 3.2rem;
+}
+
+.crew-position {
+    font-family: var(--bellefair);
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 1.8rem;
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+    opacity: 0.5;
+}
+
+.crew-name {
+    font-family: var(--bellefair);
+    font-weight: 400;
+    font-size: 2.4rem;
+    line-height: 2.8rem;
+    text-align: center;
+    text-transform: uppercase;
+
+    margin-top: 8px;
+}
+
+.crew-bio {
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    text-align: center;
+    color: var(--color-light);
+
+    margin-top: 1.6rem;
+}
+
+/* Tablet breakpoint */
+@media screen and (min-width: 768px) {
+    #crew-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        background-image: url(assets/crew/background-crew-tablet.jpg);
+    }
+
+    #crew-main {
+        margin-top: 6.4rem;
+        padding-bottom: 0;
+
+        min-height: calc(100vh - 13.6rem);
+
+        position: relative;
+        flex-direction: column-reverse;
+        justify-content: space-between;
+    }
+
+    #meet-your-crew {
+        font-size: 2rem;
+        line-height: 2.4rem;
+        letter-spacing: 3.375px;
+
+        position: absolute;
+        top: 0;
+        left: 3.85rem;
+    }
+
+    #meet-your-crew span {
+        font-size: 2rem;
+        line-height: 2.4rem;
+        letter-spacing: 3.375px;
+
+        display: inline-block;
+        margin-right: 1.2rem;
+    }
+
+    #crew-info-container {
+        margin-top: 8rem;
+        flex-direction: column;
+    }
+
+    .crew-position {
+        font-size: 2.4rem;
+        line-height: 2.8rem;
+    }
+
+    .crew-name {
+        font-size: 4rem;
+        line-height: 4.6rem;
+    }
+
+    .crew-bio {
+        font-size: 1.6rem;
+        line-height: 2.8rem;
+        
+        max-width: 46rem;
+    }
+
+    #crew-image-container {
+        margin-top: 4rem;
+        height: 55rem;
+        border: none;
+
+        align-items: flex-start;
+    }
+
+    .crew-image {
+        height: 100%;
+        width: auto;
+    }
+}
+
+/* Desktop breakpoint */
+
+@media screen and (min-width: 1024px) {
+    #crew-body {
+        background-image: url(assets/crew/background-crew-desktop.jpg);
+    }
+
+    #crew-main {
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: space-between;
+
+        margin-top: 10rem;
+        padding: 0 5rem;
+    }
+
+    #meet-your-crew,
+    #meet-your-crew span {
+        font-size: 2.8rem;
+        line-height: 3.4rem;
+        left: 5rem;
+    }
+
+    .crew-position, .crew-name,
+    .crew-bio {
+        text-align: left;
+    }
+
+    .crew-position {
+        font-size: 3.2rem;
+        line-height: 3.7rem;
+    }
+
+    .crew-name {
+        font-size: 5.6rem;
+        line-height: 6.4rem;
+        margin-top: 1.5rem;
+    }
+
+    .crew-bio {
+        font-size: 1.8rem;
+        line-height: 3.2rem;
+        margin-top: 2.7rem;
+    }
+
+    #circle-container {
+        align-self: flex-start;
+        margin-top: 12rem;
+    }
+
+    .crew-nav-circle {
+        width: 1.5rem;
+
+        cursor: pointer;
+        transition: opacity 0.1s ease-in-out;
+    }
+
+    .crew-nav-circle:hover,
+    .crew-nav-circle:focus {
+        opacity: 0.5
+    }
+
+    #crew-image-container {
+        width: auto;
+        margin: 0;
+
+        align-self: flex-end;
+    }
+}
+
+/* Slightly bigger desktop screen breakpoint */
+@media screen and (min-width: 1280px) {
+    #crew-main {
+        padding: 0 15rem;
+    }
+
+    #meet-your-crew,
+    #meet-your-crew span {
+        left: 15rem;
+    }
 }

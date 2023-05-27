@@ -4,6 +4,47 @@ $(document).ready(function() {
 
     var planetListItem = $('.planet-list-item'); // Planet list item (destination)
 
+    var crewNavCircle = $('.crew-nav-circle');
+
+    // Add event listener to crew navigation circle on click
+    crewNavCircle.on('click', function() {
+        // Activate clicked circle
+        $('.crew-nav-circle').removeClass('circle-active');
+        $(this).addClass('circle-active');
+
+        var circleIndex = $(this).index();
+        
+        loadCrew(circleIndex);
+    });
+
+    function loadCrew(index) {
+        // Load JSON data
+        $.getJSON('js/data.json', function(data) {
+            // Load clicked planet's data
+            var data = data.crew[index];
+
+            // Replace crew member image
+            $('.crew-image').fadeOut(150, function() {
+                $('.crew-image').attr('src', data.images.webp).fadeIn(150);
+            });
+
+            // Replace crew member's position (role)
+            $('.crew-position').fadeOut(150, function() {
+                $('.crew-position').text(data.role).fadeIn(150);
+            });
+
+            // Replace crew member's name
+            $('.crew-name').fadeOut(150, function() {
+                $('.crew-name').text(data.name).fadeIn(150);
+            });
+
+            // Replace crew member's bio
+            $('.crew-bio').fadeOut(150, function() {
+                $('.crew-bio').text(data.bio).fadeIn(150);
+            });
+        });
+    }
+
     // Add event listener to planet list item on click
     planetListItem.on('click', function() {
         // Activate planet which was clicked
@@ -11,11 +52,20 @@ $(document).ready(function() {
         $(this).addClass('planet-active');
 
         // Name of the planet clicked
-        var planetName = $(this).text();
-        planetName = $.trim(planetName);
+        var planetName = $.trim($(this).text());
 
         // Load planet's information
         loadPlanet(planetName);
+    });
+
+    // Opens nav menu
+    openMenuButton.on('click', function() {
+        $('#nav-bar').css('transform', 'translateX(0)');
+    });
+
+    // Closes nav menu
+    closeMenuButton.on('click', function() {
+        $('#nav-bar').css('transform', 'translateX(100%)');
     });
 
     // Loads information about given planet from data.json
@@ -64,37 +114,5 @@ $(document).ready(function() {
                 $('.travel-time').text(data.travel).fadeIn(150);
             });
         });
-    }
-
-    // Opens nav menu
-    openMenuButton.on('click', function() {
-        $('#nav-bar').css('transform', 'translateX(0)');
-    });
-
-    // Closes nav menu
-    closeMenuButton.on('click', function() {
-        $('#nav-bar').css('transform', 'translateX(100%)');
-    });
-
-    // If homepage is open
-    if (window.location.pathname == '/index.html') {
-        // Activate 'HOME' nav item
-        $('.nav-link').removeClass('active');
-        $('#index-link').addClass('active');
-    // Else if destination page is open
-    } else if (window.location.pathname == '/destination.html') {
-        // Activate 'DESTINATION' nav item
-        $('.nav-link').removeClass('active');
-        $('#destination-link').addClass('active');
-    // Else if crew page is open
-    } else if (window.location.pathname == '/crew.html') {
-        // Activate 'CREW' nav item
-        $('.nav-link').removeClass('active');
-        $('#crew-link').addClass('active');
-    // Else if technology page is open
-    } else if (window.location.pathname == '/technology.html') {
-        // Activate 'TECHNOLOGY' nav item
-        $('.nav-link').removeClass('active');
-        $('#technology-link').addClass('active');
     }
 });
