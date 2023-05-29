@@ -1,6 +1,4 @@
 $(document).ready(function() {
-    var viewportWidth = $(window).width();
-
     var openMenuButton = $('#hamburger-menu-button'); // Open Menu (hamburger) Button
     var closeMenuButton = $('#close-menu-button'); // Close Menu Button
 
@@ -10,14 +8,10 @@ $(document).ready(function() {
 
     var technologyNavNumber = $('.technology-nav-number'); // Technology page navigation numbers
 
-    // If screen width is greater than or equal to 1024px
-    if (viewportWidth >= 1024) {
-        // Load desktop pictures
-        loadTechnologyDesktop(0);
-    }
-
     // Add event listener to technology navigation number on click
     technologyNavNumber.on('click', function() {
+        var viewportWidth = $(window).width();
+
         // Activate clicked nav number
         $('.technology-nav-number').removeClass('technology-nav-active');
         $(this).addClass('technology-nav-active');
@@ -74,9 +68,17 @@ $(document).ready(function() {
             // Load clicked planet's data
             var data = data.destinations[index];
 
-            // Replace planet image
-            $('.planet-image').fadeOut(150, function() {
+            // // Replace planet image
+            // $('.planet-image').fadeOut(150, function() {
+            //     $('.planet-image').attr('src', data.images.webp).fadeIn(150);
+            // });
+
+            // Preload planet image
+            preloadImages([data.images.webp], function() {
+                // Replace planet image
+                $('.planet-image').fadeOut(150, function() {
                 $('.planet-image').attr('src', data.images.webp).fadeIn(150);
+                });
             });
 
             // Replace planet's name
@@ -108,9 +110,17 @@ $(document).ready(function() {
             // Load clicked planet's data
             var data = data.crew[index];
 
-            // Replace crew member image
-            $('.crew-image').fadeOut(150, function() {
+            // // Replace crew member image
+            // $('.crew-image').fadeOut(150, function() {
+            //     $('.crew-image').attr('src', data.images.webp).fadeIn(150);
+            // });
+
+            // Preload crew member image
+            preloadImages([data.images.webp], function() {
+                // Replace crew member image
+                $('.crew-image').fadeOut(150, function() {
                 $('.crew-image').attr('src', data.images.webp).fadeIn(150);
+                });
             });
 
             // Replace crew member's position (role)
@@ -137,9 +147,17 @@ $(document).ready(function() {
             // Load clicked technology
             var data = data.technology[index];
 
-            // Replace technology image
-            $('.technology-image').fadeOut(150, function() {
+            // // Replace technology image
+            // $('.technology-image').fadeOut(150, function() {
+            //     $('.technology-image').attr('src', data.images.landscape).fadeIn(150);
+            // });
+
+            // Preload technology image
+            preloadImages([data.images.landscape], function() {
+                // Replace technology image
+                $('.technology-image').fadeOut(150, function() {
                 $('.technology-image').attr('src', data.images.landscape).fadeIn(150);
+                });
             });
 
             // Replace technology name
@@ -161,9 +179,17 @@ $(document).ready(function() {
             // Load clicked technology
             var data = data.technology[index];
 
-            // Replace technology image
-            $('.technology-image').fadeOut(150, function() {
-                $('.technology-image').attr('src', data.images.portrait).fadeIn(150);
+            // // Replace technology image
+            // $('.technology-image-desktop').fadeOut(150, function() {
+            //     $('.technology-image-desktop').attr('src', data.images.portrait).fadeIn(150);
+            // });
+
+            // Preload technology image
+            preloadImages([data.images.portrait], function() {
+                // Replace technology image
+                $('.technology-image-desktop').fadeOut(150, function() {
+                $('.technology-image-desktop').attr('src', data.images.portrait).fadeIn(150);
+                });
             });
 
             // Replace technology name
@@ -175,6 +201,26 @@ $(document).ready(function() {
             $('.technology-description').fadeOut(150, function() {
                 $('.technology-description').text(data.description).fadeIn(150);
             });
+        });
+    }
+
+    // Preload images
+    function preloadImages(images, callback) {
+        var loadedImages = 0;
+        var numImages = images.length;
+    
+        images.forEach(function(imageUrl) {
+            var img = new Image();
+
+            img.onload = function() {
+                loadedImages++;
+
+                if (loadedImages === numImages) {
+                    callback();
+                }
+            };
+
+            img.src = imageUrl;
         });
     }
 });

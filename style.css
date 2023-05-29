@@ -144,11 +144,15 @@ header {
     width: 2.5rem;
 
     aspect-ratio: 1;
+
+    cursor: pointer;
 }
 
 #hamburger-menu-button {
     width: 2.4rem;
     height: 2.1rem;
+
+    cursor: pointer;
 }
 
 /* -------------------- */
@@ -209,6 +213,16 @@ main {
     aspect-ratio: 1;
 
     margin-top: 8.1rem;
+
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+#large-button:hover,
+#large-button:focus {
+    -webkit-box-shadow: 0px 0px 0px 80px hsl(0, 0%, 100%, 0.15);
+    -moz-box-shadow: 0px 0px 0px 80px hsl(0, 0%, 100%, 0.15);
+    box-shadow: 0px 0px 0px 80px hsl(0, 0%, 100%, 0.15);
 }
 
 /* Tablet breakpoint */
@@ -391,14 +405,6 @@ main {
     #large-button {
         padding: 0 6.4rem;
         margin: 0;
-        cursor: pointer;
-        transition: 0.2s;
-    }
-
-    #large-button:hover {
-        -webkit-box-shadow: 0px 0px 0px 80px hsl(0, 0%, 100%, 0.15);
-        -moz-box-shadow: 0px 0px 0px 80px hsl(0, 0%, 100%, 0.15);
-        box-shadow: 0px 0px 0px 80px hsl(0, 0%, 100%, 0.15);
     }
 }
 
@@ -462,6 +468,13 @@ main {
     line-height: 1.7rem;
     letter-spacing: 2.3625px;
     padding-bottom: 8px;
+
+    cursor: pointer;
+}
+
+.planet-list-item:hover,
+.planet-list-item:focus {
+    border-bottom: 3px solid hsl(0, 0%, 100%, 0.5);
 }
 
 .planet-active {
@@ -633,15 +646,6 @@ main {
         justify-content: flex-start;
     }
 
-    .planet-list-item {
-        cursor: pointer;
-    }
-
-    .planet-list-item:hover,
-    .planet-list-item:focus {
-        border-bottom: 3px solid hsl(0, 0%, 100%, 0.5);
-    }
-
     .planet-name {
         font-size: 10rem;
         line-height: 11.5rem;
@@ -726,6 +730,14 @@ main {
     border-radius: 50%;
     background-color: white;
     opacity: 0.15;
+
+    cursor: pointer;
+    transition: 0.1s ease-in-out;
+}
+
+.crew-nav-circle:hover,
+.crew-nav-circle:focus {
+    opacity: 0.5
 }
 
 .circle-active {
@@ -901,14 +913,6 @@ main {
 
     .crew-nav-circle {
         width: 1.5rem;
-
-        cursor: pointer;
-        transition: opacity 0.1s ease-in-out;
-    }
-
-    .crew-nav-circle:hover,
-    .crew-nav-circle:focus {
-        opacity: 0.5
     }
 
     #crew-image-container {
@@ -965,6 +969,10 @@ main {
     width: 100%;
 }
 
+.technology-image-desktop {
+    display: none;
+}
+
 #technology-info-container {
     display: flex;
     flex-direction: column;
@@ -993,6 +1001,13 @@ main {
 
     border: 1px solid hsl(0, 0%, 100%, 0.25);
     border-radius: 50%;
+
+    cursor: pointer;
+}
+
+.technology-nav-number:hover,
+.technology-nav-number:focus {
+    border: 1px solid hsl(0, 0%, 100%, .5);
 }
 
 .technology-nav-active {
@@ -1138,11 +1153,6 @@ main {
         transition: 0.2s;
     }
 
-    .technology-nav-number:hover,
-    .technology-nav-number:focus {
-        border: 1px solid hsl(0, 0%, 100%, .5);
-    }
-
     #technology-text-container {
         margin: 0;
     }
@@ -1169,7 +1179,11 @@ main {
     }
 
     .technology-image {
-        width: 51rem;
+        display: none;
+    }
+
+    .technology-image-desktop {
+        display: inline;
     }
 }
 
